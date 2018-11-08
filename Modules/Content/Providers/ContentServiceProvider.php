@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\Page\Providers;
+namespace Modules\Content\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 
-class PageServiceProvider extends ServiceProvider
+class ContentServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -46,10 +46,10 @@ class PageServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__.'/../Config/config.php' => config_path('page.php'),
+            __DIR__.'/../Config/config.php' => config_path('content.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'page'
+            __DIR__.'/../Config/config.php', 'content'
         );
     }
 
@@ -60,7 +60,7 @@ class PageServiceProvider extends ServiceProvider
      */
     public function registerViews()
     {
-        $viewPath = resource_path('views/modules/page');
+        $viewPath = resource_path('views/modules/content');
 
         $sourcePath = __DIR__.'/../Resources/views';
 
@@ -69,8 +69,8 @@ class PageServiceProvider extends ServiceProvider
         ],'views');
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
-            return $path . '/modules/page';
-        }, \Config::get('view.paths')), [$sourcePath]), 'page');
+            return $path . '/modules/content';
+        }, \Config::get('view.paths')), [$sourcePath]), 'content');
     }
 
     /**
@@ -80,12 +80,12 @@ class PageServiceProvider extends ServiceProvider
      */
     public function registerTranslations()
     {
-        $langPath = resource_path('lang/modules/page');
+        $langPath = resource_path('lang/modules/content');
 
         if (is_dir($langPath)) {
-            $this->loadTranslationsFrom($langPath, 'page');
+            $this->loadTranslationsFrom($langPath, 'content');
         } else {
-            $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'page');
+            $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'content');
         }
     }
 

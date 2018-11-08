@@ -1,5 +1,5 @@
 {
-    "name": "nwidart/page",
+    "name": "nwidart/content",
     "description": "",
     "authors": [
         {
@@ -10,7 +10,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\Page\\Providers\\PageServiceProvider"
+                "Modules\\Content\\Providers\\ContentServiceProvider"
             ],
             "aliases": {
                 
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Page\\": ""
+            "Modules\\Content\\": ""
         }
     }
 }

@@ -1,12 +1,12 @@
 {
-    "name": "Page",
-    "alias": "page",
+    "name": "Content",
+    "alias": "content",
     "description": "",
     "keywords": [],
     "active": 1,
     "order": 0,
     "providers": [
-        "Modules\\Page\\Providers\\PageServiceProvider"
+        "Modules\\Content\\Providers\\ContentServiceProvider"
     ],
     "aliases": {},
     "files": [],

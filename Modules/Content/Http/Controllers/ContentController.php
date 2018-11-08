@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\Page\Http\Controllers;
+namespace Modules\Content\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
-class PageController extends Controller
+class ContentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class PageController extends Controller
      */
     public function index()
     {
-        return view('page::index');
+        return view('content::index');
     }
 
     /**
@@ -23,7 +23,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        return view('page::create');
+        return view('content::create');
     }
 
     /**
@@ -41,7 +41,7 @@ class PageController extends Controller
      */
     public function show()
     {
-        return view('page::show');
+        return view('content::show');
     }
 
     /**
@@ -50,7 +50,7 @@ class PageController extends Controller
      */
     public function edit()
     {
-        return view('page::edit');
+        return view('content::edit');
     }
 
     /**
