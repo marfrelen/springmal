@@ -47,9 +47,13 @@ class AccountServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../Config/config.php' => config_path('account.php'),
+            __DIR__.'/../Config/database.php' => config_path('account.php'),
         ], 'config');
         $this->mergeConfigFrom(
             __DIR__.'/../Config/config.php', 'account'
+        );
+        $this->mergeConfigFrom(
+            __DIR__.'/../Config/database.php', 'account'
         );
     }
 

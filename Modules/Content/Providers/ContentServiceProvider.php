@@ -47,9 +47,13 @@ class ContentServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../Config/config.php' => config_path('content.php'),
+            __DIR__.'/../Config/database.php' => config_path('content.php'),
         ], 'config');
         $this->mergeConfigFrom(
             __DIR__.'/../Config/config.php', 'content'
+        );
+        $this->mergeConfigFrom(
+            __DIR__.'/../Config/database.php', 'content'
         );
     }
 
