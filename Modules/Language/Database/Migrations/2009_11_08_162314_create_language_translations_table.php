@@ -13,7 +13,7 @@ class CreateLanguageTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create(config('language.prefix').'_language_translations', function (Blueprint $table) {
+        Schema::create(config('language.database.prefix').'_language_translations', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('language_id')->unsigned();
 
@@ -21,8 +21,8 @@ class CreateLanguageTranslationsTable extends Migration
             $table->unsignedInteger('locale_id')->index();
         
             $table->unique(['language_id','locale_id']);
-            $table->foreign('language_id')->references('id')->on(config('language.prefix').'_languages')->onDelete('cascade');
-            $table->foreign('locale_id')->references('id')->on(config('language.prefix').'_languages')->onDelete('cascade');
+            $table->foreign('language_id')->references('id')->on(config('language.database.prefix').'_languages')->onDelete('cascade');
+            $table->foreign('locale_id')->references('id')->on(config('language.database.prefix').'_languages')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -34,6 +34,6 @@ class CreateLanguageTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('language.prefix').'_language_translations');
+        Schema::dropIfExists(config('language.database.prefix').'_language_translations');
     }
 }

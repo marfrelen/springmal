@@ -13,8 +13,7 @@ class CreateArticlesTable extends Migration
      */
     public function up()
     {
-        dump('database prefix: ' . config('config.database.prefix'));
-        Schema::create(config('config.prefix').'_articles', function (Blueprint $table) {
+        Schema::create(config('content.database.prefix').'_articles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('content');
             $table->timestamps();
@@ -28,6 +27,6 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('config.prefix').'_articles');
+        Schema::dropIfExists(config('content.database.prefix').'_articles');
     }
 }

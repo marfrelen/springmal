@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 return [
     'database' => [
-        'prefix' => 'account',
+        'prefix' => 'layout',
     ],
 ];

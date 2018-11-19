@@ -47,9 +47,13 @@ class LayoutServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../Config/config.php' => config_path('layout.php'),
+            __DIR__.'/../Config/database.php' => config_path('layout.php'),
         ], 'config');
         $this->mergeConfigFrom(
             __DIR__.'/../Config/config.php', 'layout'
+        );
+        $this->mergeConfigFrom(
+            __DIR__.'/../Config/database.php', 'layout'
         );
     }
 

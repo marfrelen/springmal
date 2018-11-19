@@ -13,8 +13,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        dump('Database prefix: '.config('account.prefix'));
-        Schema::create(config('account.prefix').'_users', function (Blueprint $table) {
+        Schema::create(config('account.database.prefix').'_users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
@@ -33,6 +32,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('account.prefix').'_users');
+        Schema::dropIfExists(config('account.database.prefix').'_users');
     }
 }

@@ -47,9 +47,13 @@ class BackendServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../Config/config.php' => config_path('backend.php'),
+            __DIR__.'/../Config/database.php' => config_path('backend.php'),
         ], 'config');
         $this->mergeConfigFrom(
             __DIR__.'/../Config/config.php', 'backend'
+        );
+        $this->mergeConfigFrom(
+            __DIR__.'/../Config/database.php', 'backend'
         );
     }
 

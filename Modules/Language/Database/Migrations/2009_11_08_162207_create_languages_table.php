@@ -13,7 +13,7 @@ class CreateLanguagesTable extends Migration
      */
     public function up()
     {
-        Schema::create(config('language.prefix').'_languages', function (Blueprint $table) {
+        Schema::create(config('language.database.prefix').'_languages', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code',2)->unique()->index();
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateLanguagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('language.prefix').'_languages');
+        Schema::dropIfExists(config('language.database.prefix').'_languages');
     }
 }
